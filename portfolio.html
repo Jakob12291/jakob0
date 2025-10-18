@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mitt CV</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Mitt CV</div>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="about.html">Om mig</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <h1>Portfolio</h1>
+    </header>
+    <main>
+        <section class="portfolio">
+            <div class="project">
+                <img src="images/project1.jpg" alt="Projekt 1">
+                <h3>Projekt 1</h3>
+                <button onclick="openModal('modal1')">Mer info</button>
+            </div>
+            <div class="project">
+                <img src="images/project2.jpg" alt="Projekt 2">
+                <h3>Projekt 2</h3>
+                <button onclick="openModal('modal2')">Mer info</button>
+            </div>
+            <div class="project">
+                <img src="images/project3.jpg" alt="Projekt 3">
+                <h3>Projekt 3</h3>
+                <button onclick="openModal('modal3')">Mer info</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Projekt 1</h2>
+            <p>webbplats för en lokal butik.</p>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Projekt 2</h2>
+            <p>app för att hitta restauranger.</p>
+        </div>
+    </div>
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Projekt 3</h2>
+            <p>Här skapade jag en plattform </p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Mitt CV</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

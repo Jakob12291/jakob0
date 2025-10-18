@@ -1,0 +1,369 @@
+/* Generella stilar */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+img {
+    max-width: 364px; /* Se till att bilder inte överskrider sin behållares bredd */
+    max-height: 1000%; /* Bevara bildförhållandet */
+    border-radius: 20px;
+    display: block; /* Ta bort extra utrymme under bilder */
+    margin: 1 auto; /* Centrera bilder om de är mindre än sin behållare */
+}
+
+/* Navigering */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.hamburger {
+    display: none; /* Dölj hamburgarikonen som standard */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ff9800;
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+    color: #ff9800;
+}
+
+/* Sidhuvud */
+header {
+    background: linear-gradient(135deg, #444, #666);
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+header:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Huvudinnehåll */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Portfoliosektion */
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.project {
+    background-color: #fff;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    width: calc(40% - 40px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project img {
+    max-width: 100%;
+    border-radius: 8px;
+    height: auto;
+    object-fit: cover; /* Se till att bilderna fyller sina behållare snyggt */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidfot */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+/* Modal (pop-up) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: none;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff9800;
+    cursor: pointer;
+}
+
+/* Om-sida */
+.about-page .about-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-page main {
+    flex: 2;
+}
+
+.about-page aside {
+    flex: 1;
+    max-width: 250px;
+    max-height: 3000px;
+    overflow: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-page main img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+}
+
+.about-page main .aboutText {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Kontaktsida */
+.contact-page .contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-page h1 {
+    text-align: center;
+    color: #ff9800;
+    margin-bottom: 20px;
+}
+
+.contact-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-page input,
+.contact-page textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-page button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-page button:hover {
+    background-color: #e68900;
+}
+
+/* Textsektioner */
+.contactText, .homeText, .cvText, .aboutText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.contactText > *, .homeText > *, .cvText > * {
+    max-width: 600px;
+    width: 90%;
+}
+
+.homeText > * {
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.cvText ul {
+    list-style-position: inside;
+    padding-left: 0;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #444;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .project {
+        width: calc(50% - 20px);
+    }
+
+    .about-page .about-container {
+        flex-direction: column;
+    }
+
+    .about-page aside {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project {
+        width: 100%;
+    }
+}
+
+@media (min-width: 365px) {
+    .project img {
+        width: 364px;
+        height: auto;
+    }
+}
