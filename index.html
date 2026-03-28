@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Header - Mitt CV</title>
+    <title>Hem – Jakob Daoud</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Serif+4:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
+    <a class="skip-link" href="#main-content">Hoppa till innehåll</a>
+    <nav aria-label="Huvudmeny">
         <div class="nav-container">
-            <div class="logo">Mitt CV</div>
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <div class="logo">Jakob Daoud</div>
+            <button type="button" class="hamburger" aria-expanded="false" aria-controls="navLinks" aria-label="Öppna meny">☰</button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Hem</a></li>
+                <li><a href="index.html" class="active" aria-current="page">Hem</a></li>
                 <li><a href="about.html">Om mig</a></li>
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
@@ -21,18 +22,37 @@
             </ul>
         </div>
     </nav>
-    <header>
-        <h1>Välkommen till mitt CV</h1>
+    <header class="page-header">
+        <h1>Välkommen</h1>
+        <p class="header-lead">Personlig webbplats med CV och portfolio</p>
     </header>
-    <main>
-        <section class = homeText>
-            <h2>Hej!</h2>
-            <p>Välkommen till min personliga webbplats. Här hittar du information om mig, mitt CV och min portfolio.</p>
+    <main id="main-content" class="home-main">
+        <section class="home-intro two-col" aria-labelledby="home-heading">
+            <div class="col">
+                <h2 id="home-heading">Hej!</h2>
+                <p>Jag heter Jakob och studerar / arbetar med webbutveckling. På den här sidan samlar jag en kort presentation, mitt CV och exempel på projekt jag gjort.</p>
+                <p>Använd menyn ovan för att läsa mer om mig, se mitt CV eller utforska portfolio.</p>
+            </div>
+            <div class="col col-media">
+                <figure class="home-figure">
+                    <img src="images/profile.jpg" width="400" height="400" alt="Porträtt av Jakob">
+                    <figcaption>Profilbild</figcaption>
+                </figure>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Mitt CV</p>
+    <footer class="site-footer">
+        <p>&copy; <span class="footer-year">2026</span> Jakob Daoud<span class="footer-easter" aria-hidden="true" title=""></span></p>
     </footer>
+
+    <div id="leet-modal" class="leet-modal" role="dialog" aria-modal="true" aria-labelledby="leet-title" hidden>
+        <div class="leet-modal__inner">
+            <button type="button" class="leet-modal__close" aria-label="Stäng">&times;</button>
+            <p id="leet-title" class="leet-modal__title">Grattis – du skrev in rätt kod!</p>
+            <p class="leet-modal__text">Du är officiellt <strong>1337</strong>. Nu får du en virtuell high-five.</p>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>

@@ -3,44 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Mitt CV</title>
+    <title>CV – Jakob Daoud</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/print.css" media="print">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Serif+4:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body class="cv-page">
-    <nav>
+    <a class="skip-link" href="#main-content">Hoppa till innehåll</a>
+    <nav aria-label="Huvudmeny">
         <div class="nav-container">
-            <div class="logo">Mitt CV</div>
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <div class="logo">Jakob Daoud</div>
+            <button type="button" class="hamburger" aria-expanded="false" aria-controls="navLinks" aria-label="Öppna meny">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Hem</a></li>
                 <li><a href="about.html">Om mig</a></li>
-                <li><a href="cv.html" class="active">CV</a></li>
+                <li><a href="cv.html" class="active" aria-current="page">CV</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Kontakt</a></li>
             </ul>
         </div>
     </nav>
-    <header>
-        <h1>Mitt CV</h1>
+    <header class="page-header">
+        <h1>Curriculum vitae</h1>
+        <p class="header-lead cv-header-lead">Översikt över utbildning och erfarenhet</p>
+        <p class="header-lead print-only-contact">Jakob Daoud · kontakt via kontaktsidan</p>
     </header>
-    <main>
-        <section class = "cvText">
-            <h2>Utbildning</h2>
-            <ul>
-                <li>Webb, XYZ Universitet, 2020-2023</li>
-                <li>Datavetenskap, Högskola, 2018-2020</li>
-            </ul>
-            <h2>Arbetserfarenhet</h2>
-            <ul>
-                <li>Webbutvecklare, DEF Företag, 2021-2023</li>
-                <li>Praktikant, GHI Företag, 2020</li>
+    <main id="main-content" class="cv-main">
+        <div class="cv-two-col">
+            <section class="cv-col cv-col--main" aria-labelledby="cv-profile">
+                <h2 id="cv-profile">Profil</h2>
+                <p>Webbintresserad utvecklare med fokus på semantisk HTML, responsiv CSS och tydlig struktur. Erfaren av skolprojekt och egen träning i JavaScript.</p>
+            </section>
+            <aside class="cv-col cv-col--side" aria-label="Kontakt för utskrift">
+                <h2 class="screen-reader-text">Kort</h2>
+                <ul class="cv-meta">
+                    <li><strong>Namn:</strong> Jakob Daoud</li>
+                    <li><strong>Plats:</strong> Sverige</li>
+                </ul>
+            </aside>
+        </div>
+        <section class="cv-section" aria-labelledby="cv-edu">
+            <h2 id="cv-edu">Utbildning</h2>
+            <ul class="cv-list">
+                <li>
+                    <span class="cv-item-title">Utbildning inom webbutveckling / teknik</span>
+                    <span class="cv-item-meta">Skola / högskola · år enligt dina uppgifter</span>
+                    <p>Kurser i webb, programmering och projektarbete.</p>
+                </li>
+                <li>
+                    <span class="cv-item-title">Gymnasium / motsvarande</span>
+                    <span class="cv-item-meta">År</span>
+                </li>
             </ul>
         </section>
+        <section class="cv-section" aria-labelledby="cv-work">
+            <h2 id="cv-work">Arbetslivserfarenhet</h2>
+            <ul class="cv-list">
+                <li>
+                    <span class="cv-item-title">Praktik / deltid / projekt</span>
+                    <span class="cv-item-meta">Företag · period</span>
+                    <p>Uppgifter enligt erfarenhet: t.ex. underhåll av webb, innehåll eller support.</p>
+                </li>
+                <li>
+                    <span class="cv-item-title">Övriga uppdrag</span>
+                    <span class="cv-item-meta">Vid behov</span>
+                </li>
+            </ul>
+        </section>
+        <section class="cv-section" aria-labelledby="cv-skills">
+            <h2 id="cv-skills">Kompetenser</h2>
+            <div class="cv-skills-grid">
+                <div>
+                    <h3>Språk &amp; teknik</h3>
+                    <ul>
+                        <li>HTML5, CSS3</li>
+                        <li>JavaScript (grund)</li>
+                        <li>Responsiv layout</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Verktyg</h3>
+                    <ul>
+                        <li>Git / GitHub</li>
+                        <li>Redigerare som VS Code</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Mitt CV</p>
+    <footer class="site-footer">
+        <p>&copy; <span class="footer-year">2026</span> Jakob Daoud<span class="footer-easter" aria-hidden="true" title=""></span></p>
     </footer>
+
+    <div id="leet-modal" class="leet-modal" role="dialog" aria-modal="true" aria-labelledby="leet-title" hidden>
+        <div class="leet-modal__inner">
+            <button type="button" class="leet-modal__close" aria-label="Stäng">&times;</button>
+            <p id="leet-title" class="leet-modal__title">Grattis – du skrev in rätt kod!</p>
+            <p class="leet-modal__text">Du är officiellt <strong>1337</strong>. Nu får du en virtuell high-five.</p>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>

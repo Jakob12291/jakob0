@@ -3,49 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Om mig - Mitt CV</title>
+    <title>Om mig – Jakob Daoud</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Serif+4:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body class="about-page">
-    <nav>
+    <a class="skip-link" href="#main-content">Hoppa till innehåll</a>
+    <nav aria-label="Huvudmeny">
         <div class="nav-container">
-            <div class="logo">Mitt CV</div>
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <div class="logo">Jakob Daoud</div>
+            <button type="button" class="hamburger" aria-expanded="false" aria-controls="navLinks" aria-label="Öppna meny">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Hem</a></li>
-                <li><a href="about.html" class="active">Om mig</a></li>
+                <li><a href="about.html" class="active" aria-current="page">Om mig</a></li>
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Kontakt</a></li>
             </ul>
         </div>
     </nav>
-    <header>
+    <header class="page-header">
         <h1>Om mig</h1>
     </header>
-    <div class="about-container">
+    <div class="about-container" id="main-content">
         <main>
-            <section>
-                <h2>Hej, jag heter Jakob daoud</h2>
-                <img src="images/profile.jpg" alt="Profilbild">
-                <p class = "aboutText">Jag är 23år och en passionerad utvecklare.</p>
-            </section>
+            <article>
+                <h2>Presentation</h2>
+                <p class="aboutText">Hej, jag heter Jakob Daoud. Jag är intresserad av webbutveckling, användarvänliga gränssnitt och att bygga saker som fungerar bra både på mobil och desktop.</p>
+                <figure class="about-figure">
+                    <img src="images/profile.jpg" width="480" height="480" alt="Jakob vid skrivbord">
+                    <figcaption>Arbetsmiljö och profil</figcaption>
+                </figure>
+                <p>Jag gillar att lära mig nya ramverk och verktyg, och att förbättra min kod steg för steg. På den här webbplatsen visar jag upp mitt CV och några projekt från min utbildning.</p>
+            </article>
         </main>
-        <aside>
+        <aside aria-label="Snabbinfo">
             <h2>Snabbinfo</h2>
             <ul>
                 <li><strong>Namn:</strong> Jakob Daoud</li>
-                <li><strong>Yrke:</strong> Tekniker</li>
-                <li><strong>Erfarenhet:</strong> 2+ år</li>
-                <li><strong>Favorit-språk:</strong> HTML, CSS, JavaScript, React,</li>
+                <li><strong>Fokus:</strong> Webb &amp; frontend</li>
+                <li><strong>Språk:</strong> HTML, CSS, JavaScript</li>
+                <li><strong>Övrigt:</strong> Nyfiken på UX och tillgänglighet</li>
             </ul>
         </aside>
     </div>
-    <footer>
-        <p>&copy; 2025 Mitt CV</p>
+    <footer class="site-footer">
+        <p>&copy; <span class="footer-year">2026</span> Jakob Daoud<span class="footer-easter" aria-hidden="true" title=""></span></p>
     </footer>
+
+    <div id="leet-modal" class="leet-modal" role="dialog" aria-modal="true" aria-labelledby="leet-title" hidden>
+        <div class="leet-modal__inner">
+            <button type="button" class="leet-modal__close" aria-label="Stäng">&times;</button>
+            <p id="leet-title" class="leet-modal__title">Grattis – du skrev in rätt kod!</p>
+            <p class="leet-modal__text">Du är officiellt <strong>1337</strong>. Nu får du en virtuell high-five.</p>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
-

@@ -3,40 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt - Mitt CV</title>
+    <title>Kontakt – Jakob Daoud</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Serif+4:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body class="contact-page">
-    <nav>
+    <a class="skip-link" href="#main-content">Hoppa till innehåll</a>
+    <nav aria-label="Huvudmeny">
         <div class="nav-container">
-            <div class="logo">Mitt CV</div>
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <div class="logo">Jakob Daoud</div>
+            <button type="button" class="hamburger" aria-expanded="false" aria-controls="navLinks" aria-label="Öppna meny">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Hem</a></li>
                 <li><a href="about.html">Om mig</a></li>
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html" class="active">Kontakt</a></li>
+                <li><a href="contact.html" class="active" aria-current="page">Kontakt</a></li>
             </ul>
         </div>
     </nav>
 
-    <header>
+    <header class="page-header">
         <h1>Kontakt</h1>
     </header>
 
-    <main>
-        <section class = contactText>
-            <h2>Kontakta mig</h2>
-            <p><strong>Du kan nå mig via e-post:</strong> <a href="mailto:example@example.com">JJ</a></p>
-            <p><strong>Tel Nr:</strong> 123456789</p>
-        </section>
+    <main id="main-content" class="contact-main">
+        <div class="contact-two-col">
+            <section class="contactText" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Kontakta mig</h2>
+                <p>Här når du mig för frågor om portfolio, CV eller samarbete.</p>
+                <p><strong>E-post:</strong> <a href="mailto:jakob@example.com">jakob@example.com</a> <span class="hint-muted">(byt till din riktiga adress)</span></p>
+                <p><strong>Telefon:</strong> 070-000 00 00</p>
+            </section>
+            <aside class="contact-aside" aria-label="Övrigt">
+                <h2>Övrigt</h2>
+                <p>Du kan också nå mig via skolplattformen eller LinkedIn om du listar det där.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </aside>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Mitt CV</p>
+    <footer class="site-footer">
+        <p>&copy; <span class="footer-year">2026</span> Jakob Daoud<span class="footer-easter" aria-hidden="true" title=""></span></p>
     </footer>
+
+    <div id="leet-modal" class="leet-modal" role="dialog" aria-modal="true" aria-labelledby="leet-title" hidden>
+        <div class="leet-modal__inner">
+            <button type="button" class="leet-modal__close" aria-label="Stäng">&times;</button>
+            <p id="leet-title" class="leet-modal__title">Grattis – du skrev in rätt kod!</p>
+            <p class="leet-modal__text">Du är officiellt <strong>1337</strong>. Nu får du en virtuell high-five.</p>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

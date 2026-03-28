@@ -3,71 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Mitt CV</title>
+    <title>Portfolio – Jakob Daoud</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Serif+4:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
+    <a class="skip-link" href="#portfolio-grid">Hoppa till innehåll</a>
+    <nav aria-label="Huvudmeny">
         <div class="nav-container">
-            <div class="logo">Mitt CV</div>
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <div class="logo">Jakob Daoud</div>
+            <button type="button" class="hamburger" aria-expanded="false" aria-controls="navLinks" aria-label="Öppna meny">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Hem</a></li>
                 <li><a href="about.html">Om mig</a></li>
                 <li><a href="cv.html">CV</a></li>
-                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="portfolio.html" class="active" aria-current="page">Portfolio</a></li>
                 <li><a href="contact.html">Kontakt</a></li>
             </ul>
         </div>
     </nav>
-    <header>
+    <header class="page-header">
         <h1>Portfolio</h1>
+        <p class="header-lead">Projekt från utbildning och egna experiment</p>
     </header>
     <main>
-        <section class="portfolio">
-            <div class="project">
-                <img src="images/project1.jpg" alt="Projekt 1">
-                <h3>Projekt 1</h3>
-                <button onclick="openModal('modal1')">Mer info</button>
-            </div>
-            <div class="project">
-                <img src="images/project2.jpg" alt="Projekt 2">
-                <h3>Projekt 2</h3>
-                <button onclick="openModal('modal2')">Mer info</button>
-            </div>
-            <div class="project">
-                <img src="images/project3.jpg" alt="Projekt 3">
-                <h3>Projekt 3</h3>
-                <button onclick="openModal('modal3')">Mer info</button>
-            </div>
+        <section class="portfolio" id="portfolio-grid" aria-label="Projektlista">
+            <article class="project">
+                <input type="checkbox" id="modal-p1" class="modal-toggle">
+                <div class="project-card">
+                    <img src="images/project1.jpg" width="640" height="400" alt="Skärmdump av webbplatsprojekt 1">
+                    <h3 class="project-title">Webbplats för lokal butik</h3>
+                    <label for="modal-p1" class="btn-mer-info">Mer information</label>
+                </div>
+                <div class="project-modal" role="dialog" aria-labelledby="modal-p1-title">
+                    <label for="modal-p1" class="project-modal__backdrop"></label>
+                    <div class="project-modal__dialog">
+                        <label for="modal-p1" class="project-modal__close" title="Stäng">&times;</label>
+                        <h3 id="modal-p1-title" class="project-modal__heading">Webbplats för lokal butik</h3>
+                        <p>Skolprojekt där jag byggde en enkel landningssida med meny, öppettider och kontakt. Fokus på tydlig typografi och mobilanpassning.</p>
+                        <p><strong>Teknik:</strong> HTML, CSS, responsiva bilder.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project">
+                <input type="checkbox" id="modal-p2" class="modal-toggle">
+                <div class="project-card">
+                    <img src="images/project2.jpg" width="640" height="400" alt="Skärmdump av appprojekt för restauranger">
+                    <h3 class="project-title">Restaurangfinder</h3>
+                    <label for="modal-p2" class="btn-mer-info">Mer information</label>
+                </div>
+                <div class="project-modal" role="dialog" aria-labelledby="modal-p2-title">
+                    <label for="modal-p2" class="project-modal__backdrop"></label>
+                    <div class="project-modal__dialog">
+                        <label for="modal-p2" class="project-modal__close" title="Stäng">&times;</label>
+                        <h3 id="modal-p2-title" class="project-modal__heading">Restaurangfinder</h3>
+                        <p>Grupparbete: en prototyp för att söka och filtrera restauranger. Jag ansvarade för layout och komponentstruktur.</p>
+                        <p><strong>Teknik:</strong> HTML/CSS, enkel JavaScript för interaktion.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project">
+                <input type="checkbox" id="modal-p3" class="modal-toggle">
+                <div class="project-card">
+                    <img src="images/project3.jpg" width="640" height="400" alt="Skärmdump av plattformsprojekt">
+                    <h3 class="project-title">Enkel innehållsplattform</h3>
+                    <label for="modal-p3" class="btn-mer-info">Mer information</label>
+                </div>
+                <div class="project-modal" role="dialog" aria-labelledby="modal-p3-title">
+                    <label for="modal-p3" class="project-modal__backdrop"></label>
+                    <div class="project-modal__dialog">
+                        <label for="modal-p3" class="project-modal__close" title="Stäng">&times;</label>
+                        <h3 id="modal-p3-title" class="project-modal__heading">Enkel innehållsplattform</h3>
+                        <p>Projekt där användare kunde bläddra mellan kort med innehåll. Jag jobbade med semantik och tillgängliga färger.</p>
+                        <p><strong>Teknik:</strong> HTML5, CSS Grid/Flexbox.</p>
+                    </div>
+                </div>
+            </article>
         </section>
     </main>
-
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal1')">&times;</span>
-            <h2>Projekt 1</h2>
-            <p>webbplats för en lokal butik.</p>
-        </div>
-    </div>
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal2')">&times;</span>
-            <h2>Projekt 2</h2>
-            <p>app för att hitta restauranger.</p>
-        </div>
-    </div>
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal3')">&times;</span>
-            <h2>Projekt 3</h2>
-            <p>Här skapade jag en plattform </p>
-        </div>
-    </div>
-    <footer>
-        <p>&copy; 2025 Mitt CV</p>
+    <footer class="site-footer">
+        <p>&copy; <span class="footer-year">2026</span> Jakob Daoud<span class="footer-easter" aria-hidden="true" title=""></span></p>
     </footer>
+
+    <div id="leet-modal" class="leet-modal" role="dialog" aria-modal="true" aria-labelledby="leet-title" hidden>
+        <div class="leet-modal__inner">
+            <button type="button" class="leet-modal__close" aria-label="Stäng">&times;</button>
+            <p id="leet-title" class="leet-modal__title">Grattis – du skrev in rätt kod!</p>
+            <p class="leet-modal__text">Du är officiellt <strong>1337</strong>. Nu får du en virtuell high-five.</p>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>

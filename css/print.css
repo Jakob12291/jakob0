@@ -1,14 +1,115 @@
+/* Utskrift – främst CV-sidan */
+@page {
+    margin: 1.5cm;
+}
+
 @media print {
-    nav, footer {
-        display: none;
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    html,
+    body {
+        background: #fff !important;
+        color: #000 !important;
+        font-size: 11pt;
+        line-height: 1.4;
     }
 
     body {
-        background-color: #fff;
-        color: #000;
+        display: block !important;
+        min-height: auto !important;
     }
 
-    .project {
+    body.easter-bg {
+        background: #fff !important;
+        background-image: none !important;
+    }
+
+    .skip-link,
+    nav,
+    .hamburger,
+    .site-footer,
+    .leet-modal,
+    script {
+        display: none !important;
+    }
+
+    .page-header {
+        background: none !important;
+        color: #000 !important;
+        padding: 0 0 1rem !important;
+        text-align: left !important;
+        border-bottom: 2pt solid #333;
+    }
+
+    .page-header h1 {
+        font-size: 22pt;
+        margin: 0 0 0.25rem;
+    }
+
+    .cv-header-lead {
+        display: none !important;
+    }
+
+    .print-only-contact {
+        display: block !important;
+        font-size: 10pt;
+        margin: 0;
+        opacity: 1;
+    }
+
+    main {
+        max-width: 100% !important;
+        padding: 1rem 0 !important;
+        margin: 0 !important;
+    }
+
+    .cv-main {
+        max-width: 100%;
+    }
+
+    .cv-two-col {
+        display: grid !important;
+        grid-template-columns: 2fr 1fr !important;
+        gap: 1rem !important;
         page-break-inside: avoid;
+    }
+
+    .cv-section {
+        page-break-inside: avoid;
+        border: 1pt solid #ccc;
+        padding: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    .cv-section h2 {
+        font-size: 14pt;
+        border-bottom: 1pt solid #333;
+        padding-bottom: 0.25rem;
+        margin-top: 0;
+    }
+
+    .cv-skills-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.75rem !important;
+    }
+
+    .cv-list > li {
+        padding: 0.5rem 0 !important;
+    }
+
+    a[href^="http"]::after,
+    a[href^="mailto:"]::after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #444;
+    }
+
+    a {
+        color: #000 !important;
+        text-decoration: underline;
     }
 }
